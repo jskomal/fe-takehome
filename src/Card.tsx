@@ -1,5 +1,6 @@
 import React from 'react'
 import { Article } from './App'
+import './Card.css'
 
 export const Card = ({
   title,
@@ -11,14 +12,17 @@ export const Card = ({
   subsection
 }: Article) => {
   return (
-    <article>
-      <img src={img} alt={imgCaption} />
-      <h3>{title}</h3>
+    <article className='article'>
+      <img className='article-img' src={img} alt={imgCaption} />
       <div>
-        <p>{byline}</p>
-        <p>{date}</p>
+        <h3 className='article-title'>{title}</h3>
+        <div className='author-date-pair'>
+          <p>{byline}</p>
+          <p>{date}</p>
+        </div>
       </div>
       <p>{abstract}</p>
+      <p>subsection: {subsection || 'arts'}</p>
     </article>
   )
 }
