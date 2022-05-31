@@ -45,3 +45,9 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+#root {
+  --clr-black: black;
+  --clr-grey: #333;
+  --clr-white: white;
+}
