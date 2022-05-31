@@ -7,7 +7,7 @@ export interface Article {
   abstract: string
   date: string
   img: string
-  subsection: string
+  subsection?: string
 }
 
 function App() {
