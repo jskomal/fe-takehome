@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 
+export interface Article {
+  title: string
+  byline: string
+  abstract: string
+  date: string
+  img: string
+  subsection: string
+}
+
 function App() {
-  const [articles, setArticles] = useState<any>(null)
+  const [articles, setArticles] = useState<Article[] | null>(null)
 
   useEffect(() => {
     fetch(
