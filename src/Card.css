@@ -34,3 +34,7 @@
   justify-content: space-between;
   margin: 0 1rem 0.5rem 1rem;
 }
+
+.category {
+  align-self: flex-end;
+}
