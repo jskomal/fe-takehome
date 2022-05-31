@@ -7,6 +7,7 @@ export interface Article {
   abstract: string
   date: string
   img: string
+  imgCaption: string
   subsection?: string
 }
 
@@ -18,7 +19,20 @@ function App() {
       `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        const results = data.results.map((story: any) => {
+          return {
+            title: story.title,
+            byline: story.byline,
+            abstract: story.abstract,
+            date: story.published_date,
+            img: story.multimedia[1].url,
+            imgCaption: story.multimedia[1].caption,
+            subsection: story.subsection
+          }
+        })
+        setArticles(results)
+      })
   }, [])
 
   return (
