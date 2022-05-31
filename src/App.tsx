@@ -39,7 +39,7 @@ function App() {
   return (
     <div className='App'>
       <div className='main-title'>
-        <h1>ARTS NEWS ALERT</h1>
+        <h1>Sound and Color</h1>
         <p className='subtitle'>From the New York Times API</p>
       </div>
       <Articles articles={articles} />
