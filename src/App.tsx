@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
+import { Articles } from './Articles'
 
 export interface Article {
   title: string
@@ -38,6 +39,7 @@ function App() {
   return (
     <div className='App'>
       <h1>ARTS NEWS ALERT</h1>
+      <Articles articles={articles} />
     </div>
   )
 }
