@@ -1,6 +1,7 @@
 import React from 'react'
 import { Article } from './App'
 import './Card.css'
+import dayjs from 'dayjs'
 
 export const Card = ({
   title,
@@ -18,11 +19,16 @@ export const Card = ({
         <h3 className='article-title'>{title}</h3>
         <div className='author-date-pair'>
           <p>{byline}</p>
-          <p>{date}</p>
+          <p>{dayjs(date).format('MMM D, YYYY')}</p>
         </div>
       </div>
       <p>{abstract}</p>
-      <p>subsection: {subsection || 'arts'}</p>
+      {subsection !== undefined && (
+        <p className='category'>
+          category:{' '}
+          {`${subsection.charAt(0).toUpperCase()}${subsection.slice(1)}` || 'Arts'}
+        </p>
+      )}
     </article>
   )
 }
