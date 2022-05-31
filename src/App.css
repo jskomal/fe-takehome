@@ -50,4 +50,24 @@ h6 {
   --clr-black: black;
   --clr-grey: #333;
   --clr-white: white;
+  --border-rad: 0.3rem;
+  --box-shadow: 0 0 10px #333;
+}
+
+.main-title {
+  text-align: center;
+  width: 100%;
+  border: 1px solid var(--clr-black);
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  height: 4rem;
+  padding-top: 0.5rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  position: absolute;
+  left: 87vw;
+  top: 0.5rem;
 }
