@@ -1,4 +1,5 @@
 import React from 'react'
+import './Articles.css'
 import { Article } from './App'
 import { Card } from './Card'
 
@@ -25,5 +26,5 @@ export const Articles = ({ articles }: Props) => {
     })
   }
 
-  return <section>{cards}</section>
+  return <section className='article-view'>{cards}</section>
 }
