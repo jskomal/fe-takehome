@@ -5,6 +5,7 @@
   align-items: center;
   border: 1px solid var(--clr-grey);
   border-radius: var(--border-rad);
+  min-width: 450px;
   width: 45vw;
   max-width: 700px;
   overflow: hidden;
@@ -15,6 +16,8 @@
 .article-img {
   max-width: 600px;
   box-shadow: var(--box-shadow);
+  object-fit: contain;
+  width: 45vw;
 }
 
 .article-title {
@@ -27,8 +30,7 @@
 }
 
 .author-date-pair {
-  width: 35vw;
-  max-width: 600px;
   display: flex;
   justify-content: space-between;
+  margin: 0 1rem 0.5rem 1rem;
 }
