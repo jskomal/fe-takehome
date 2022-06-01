@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Articles } from './Articles'
 
-export interface Article {
+export type Article = {
   title: string
   byline: string
   abstract: string
@@ -12,7 +12,17 @@ export interface Article {
   subsection?: string
 }
 
-function App() {
+type APIResponse = {
+  [key: string]: string | Multimedia[]
+  multimedia: Multimedia[]
+}
+
+type Multimedia = {
+  url: string
+  caption: string
+}
+
+const App = () => {
   const [articles, setArticles] = useState<Article[] | null>(null)
 
   useEffect(() => {
@@ -21,7 +31,7 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        const results = data.results.map((story: any) => {
+        const results = data.results.map((story: APIResponse) => {
           return {
             title: story.title,
             byline: story.byline,
