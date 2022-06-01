@@ -20,7 +20,7 @@ export const Articles = ({ articles }: Props) => {
           date={story.date}
           img={story.img}
           imgCaption={story.imgCaption}
-          subsection={story.subsection || ''}
+          subsection={story.subsection || 'Arts'}
         />
       )
     })
