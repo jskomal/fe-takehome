@@ -22,10 +22,9 @@ export const Card = ({
           <p>{dayjs(date).format('MMM D, YYYY')}</p>
         </div>
       </div>
-      <p className='abstract'>{abstract}</p>
+      <p>{abstract}</p>
       {subsection !== undefined && (
         <p className='category'>
-          category:{' '}
           {`${subsection.charAt(0).toUpperCase()}${subsection.slice(1)}` || 'Arts'}
         </p>
       )}
