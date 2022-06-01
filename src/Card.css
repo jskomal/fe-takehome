@@ -14,6 +14,7 @@
 }
 
 .article-img {
+  min-width: 350px;
   max-width: 600px;
   box-shadow: var(--box-shadow);
   object-fit: cover;
@@ -26,6 +27,7 @@
   color: var(--clr-white);
   background-color: var(--clr-black);
   width: 45vw;
+  min-width: 350px;
   text-align: center;
   padding: 0.5rem;
 }
@@ -38,8 +40,14 @@
 
 .abstract {
   margin: 1rem 0;
+  color: var(--clr-black);
 }
 
 .category {
   align-self: flex-end;
+  color: var(--clr-black);
+}
+
+p {
+  color: var(--clr-black);
 }
