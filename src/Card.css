@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   border: 1.5px solid var(--clr-grey);
   border-radius: var(--border-rad);
   box-shadow: var(--box-shadow);
   min-width: 450px;
   width: 45vw;
   max-width: 700px;
+  min-height: 85vh;
   overflow: hidden;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -50,4 +52,20 @@
 
 p {
   color: var(--clr-black);
+}
+
+@media screen and (max-width: 500px) {
+  .article {
+    width: 370px;
+    min-width: 370px;
+  }
+  .article-img {
+    width: 360px;
+  }
+  .article-title {
+    width: 370px;
+  }
+  .abstract {
+    width: 360px;
+  }
 }
