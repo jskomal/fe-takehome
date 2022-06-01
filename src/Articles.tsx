@@ -13,7 +13,8 @@ export const Articles = ({ articles }: Props) => {
     cards = articles.map((story) => {
       return (
         <Card
-          key={story.title}
+          id={story.id}
+          key={story.id}
           title={story.title}
           byline={story.byline}
           abstract={story.abstract}
