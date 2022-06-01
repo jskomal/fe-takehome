@@ -70,4 +70,5 @@ h6 {
   position: absolute;
   left: 86vw;
   top: 1rem;
+  color: var(--clr-white);
 }
