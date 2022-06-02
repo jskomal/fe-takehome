@@ -74,8 +74,10 @@ const App = () => {
     )
     if (results !== undefined) {
       setSearchedArticles(results)
-    } else {
-      setErrorMsg('No results found')
+      setErrorMsg('')
+      if (!results[0]) {
+        setErrorMsg('No results found')
+      }
     }
 
     if (input === '') {
@@ -89,7 +91,7 @@ const App = () => {
         <ArticleContext.Provider value={articles}>
           <Header />
           {isLoading && <h1 className='loading'>Loading...</h1>}
-          {errorMsg !== '' && <h1>{errorMsg}</h1>}
+          {errorMsg !== '' && <h1 className='loading'>{errorMsg}</h1>}
           <Routes>
             <Route
               path='/'
