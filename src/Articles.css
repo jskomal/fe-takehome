@@ -3,3 +3,15 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.input-box {
+  width: 100vw;
+}
+
+.search-bar {
+  border-radius: var(--border-rad);
+  width: 50vw;
+  margin: 0.5rem 25% 1rem;
+  text-align: center;
+  display: inline-block;
+}

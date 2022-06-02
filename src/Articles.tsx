@@ -3,11 +3,12 @@ import './Articles.css'
 import { Article } from './App'
 import { Card } from './Card'
 
-interface Props {
+type Props = {
   articles: Article[] | null
+  filterSearch: (input: string) => void
 }
 
-export const Articles = ({ articles }: Props) => {
+export const Articles = ({ articles, filterSearch }: Props) => {
   let cards
   if (articles !== null) {
     cards = articles.map((story) => {
@@ -27,5 +28,19 @@ export const Articles = ({ articles }: Props) => {
     })
   }
 
-  return <section className='article-view'>{cards}</section>
+  return (
+    <div>
+      <div className='input-box'>
+        <input
+          className='search-bar'
+          type='text'
+          placeholder='search for an article'
+          onChange={(e) => {
+            filterSearch(e.target.value)
+          }}
+        />
+      </div>
+      <section className='article-view'>{cards}</section>
+    </div>
+  )
 }
