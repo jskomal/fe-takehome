@@ -73,3 +73,7 @@ h6 {
   color: var(--clr-white);
   font-size: clamp(1vw, 0.5rem, 10px);
 }
+
+.loading {
+  text-align: center;
+}

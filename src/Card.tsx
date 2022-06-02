@@ -19,13 +19,13 @@ export const Card = ({
       <article className='article'>
         <img className='article-img' src={img} alt={imgCaption} />
         <div>
-          <h3 className='article-title'>{title}</h3>
+          <h3 className='article-title'>{title || 'No Title Provided'}</h3>
           <div className='author-date-pair'>
-            <p>{byline}</p>
-            <p>{dayjs(date).format('MMM D, YYYY')}</p>
+            <p>{byline || 'No Author provided'}</p>
+            <p>{dayjs(date).format('MMM D, YYYY') || 'No Date Provided'}</p>
           </div>
         </div>
-        <p className='abstract'>{abstract}</p>
+        <p className='abstract'>{abstract || 'No content provided'}</p>
         {subsection !== undefined && (
           <p className='category'>
             {`${subsection.charAt(0).toUpperCase()}${subsection.slice(1)}` || 'Arts'}
