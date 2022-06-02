@@ -13,18 +13,18 @@ const SingleArticle = () => {
 
   return (
     <div className='single-view'>
+      <h1>{currentArticle?.title || 'No title provided'}</h1>
       <img
         className='single-img'
         src={currentArticle?.img}
         alt={currentArticle?.imgCaption}
       />
-      <h1>{currentArticle?.title}</h1>
-      <p>{currentArticle?.imgCaption}</p>
+      <p>{currentArticle?.imgCaption || 'No caption provided'}</p>
       <div className='single-pair'>
-        <h3>{currentArticle?.byline}</h3>
-        <h3>{dayjs(currentArticle?.date).format('MMM D, YYYY')}</h3>
+        <h3>{currentArticle?.byline || 'No author provided'}</h3>
+        <h3>{dayjs(currentArticle?.date).format('MMM D, YYYY') || 'No date provided'}</h3>
       </div>
-      <p>{currentArticle?.abstract}</p>
+      <p>{currentArticle?.abstract || 'No content provided'}</p>
     </div>
   )
 }
