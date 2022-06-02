@@ -32,6 +32,7 @@ const App = () => {
   const [articles, setArticles] = useState<Article[] | null>(null)
   const [searchedArticles, setSearchedArticles] = useState<Article[] | null>(null)
   const [errorMsg, setErrorMsg] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetch(
@@ -59,6 +60,7 @@ const App = () => {
         })
         setArticles(results)
         setSearchedArticles(results)
+        setIsLoading(false)
       })
       .catch((err) => {
         setErrorMsg('Something went wrong, please try again later')
@@ -86,6 +88,8 @@ const App = () => {
       <BrowserRouter>
         <ArticleContext.Provider value={articles}>
           <Header />
+          {isLoading && <h1 className='loading'>Loading...</h1>}
+          {errorMsg !== '' && <h1>{errorMsg}</h1>}
           <Routes>
             <Route
               path='/'
