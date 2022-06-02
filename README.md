@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# Sound and Color
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Deployed here]('https://sound-and-color.herokuapp.com/')
 
-## Available Scripts
+### Written by
 
-In the project directory, you can run:
+[Jordan Skomal]('https://github.com/jskomal')
 
-### `npm start`
+<img width="1430" alt="image" src="https://user-images.githubusercontent.com/90876852/171560228-ca6da8c3-3724-4602-a0fd-6253a8ef3beb.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Description
 
-### `npm test`
+This project is a final take home challenge, completed in under 8 hours, which demonstrates knowledge of React, Context API, Typescript, Javascript, and CSS. This presented an opportunity to work with mobile-friendly responsive design, and showcase what I've learned through Turing these past months.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I focused on error handling, and showed aptitude for clean design principles, providing a simple, functional UI/UX that is clear at all points of the application.
 
-### `npm run build`
+### Tech used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- Typescript
+- CreateReactApp
+- Context API
+- Day.js
+- HTML
+- CSS
+- Javascript
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation instructions
+This repo can be cloned locally and run with the command `npm start` in your terminal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Your local copy requires an API key from the New York Times [which can be generated here]('https://developer.nytimes.com/docs/top-stories-product/1/overview')
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Place your key in a `.env` file in the root of the directory with the key of `REACT_APP_API_KEY`
