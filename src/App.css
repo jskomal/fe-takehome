@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200;6..72,400&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Newsreader', serif;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-weight: 400;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+#root {
+  --clr-black: black;
+  --clr-grey: #333;
+  --clr-white: white;
+  --border-rad: 0.3rem;
+  --box-shadow: 0 0 10px #333;
+}
+
+.main-title {
+  text-align: center;
+  width: 100%;
+  border: 1px solid var(--clr-black);
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  height: 5rem;
+  padding-top: 1.25rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  position: absolute;
+  left: 86vw;
+  top: 1rem;
+}

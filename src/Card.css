@@ -1,0 +1,45 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1.5px solid var(--clr-grey);
+  border-radius: var(--border-rad);
+  box-shadow: var(--box-shadow);
+  min-width: 450px;
+  width: 45vw;
+  max-width: 700px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.article-img {
+  max-width: 600px;
+  box-shadow: var(--box-shadow);
+  object-fit: cover;
+  width: 45vw;
+}
+
+.article-title {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--clr-white);
+  background-color: var(--clr-black);
+  width: 45vw;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.author-date-pair {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 1rem 0.5rem 1rem;
+}
+
+.abstract {
+  margin: 1rem 0;
+}
+
+.category {
+  align-self: flex-end;
+}
