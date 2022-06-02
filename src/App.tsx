@@ -4,6 +4,7 @@ import './App.css'
 import { Articles } from './Articles'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SingleArticle from './SingleArticle'
+
 export type Article = {
   id: number
   title: string
@@ -29,11 +30,20 @@ export const ArticleContext = React.createContext<Article[] | null>(null)
 
 const App = () => {
   const [articles, setArticles] = useState<Article[] | null>(null)
+  const [searchedArticles, setSearchedArticles] = useState<Article[] | null>(null)
+  const [errorMsg, setErrorMsg] = useState('')
+
   useEffect(() => {
     fetch(
       `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${process.env.REACT_APP_API_KEY}`
     )
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          setErrorMsg('Something went wrong, please try again later')
+        }
+      })
       .then((data) => {
         const results = data.results.map((story: APIResponse, index: number) => {
           return {
@@ -48,8 +58,28 @@ const App = () => {
           }
         })
         setArticles(results)
+        setSearchedArticles(results)
+      })
+      .catch((err) => {
+        setErrorMsg('Something went wrong, please try again later')
+        throw new Error(err)
       })
   }, [])
+
+  const filterSearch = (input: string) => {
+    const results = articles?.filter((story) =>
+      story.title.toLowerCase().includes(input.toLowerCase())
+    )
+    if (results !== undefined) {
+      setSearchedArticles(results)
+    } else {
+      setErrorMsg('No results found')
+    }
+
+    if (input === '') {
+      setSearchedArticles(articles)
+    }
+  }
 
   return (
     <div>
@@ -57,7 +87,12 @@ const App = () => {
         <ArticleContext.Provider value={articles}>
           <Header />
           <Routes>
-            <Route path='/' element={<Articles articles={articles} />} />
+            <Route
+              path='/'
+              element={
+                <Articles articles={searchedArticles} filterSearch={filterSearch} />
+              }
+            />
             <Route path='articles/:id' element={<SingleArticle />} />
           </Routes>
         </ArticleContext.Provider>
