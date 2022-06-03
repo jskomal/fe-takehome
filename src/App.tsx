@@ -47,7 +47,6 @@ const App = () => {
         }
       })
       .then((data) => {
-        console.log(data)
         const results = data.results.map((story: APIResponse, index: number) => {
           return {
             id: index,
