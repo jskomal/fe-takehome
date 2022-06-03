@@ -23,6 +23,7 @@ export const Articles = ({ articles, filterSearch }: Props) => {
           img={story.img}
           imgCaption={story.imgCaption}
           subsection={story.subsection || 'Arts'}
+          url={story.url}
         />
       )
     })

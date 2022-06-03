@@ -25,6 +25,7 @@ const SingleArticle = () => {
         <h3>{dayjs(currentArticle?.date).format('MMM D, YYYY') || 'No date provided'}</h3>
       </div>
       <p>{currentArticle?.abstract || 'No content provided'}</p>
+      <a href={currentArticle?.url}>Link to the New York Times article</a>
     </div>
   )
 }
