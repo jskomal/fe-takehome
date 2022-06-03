@@ -32,3 +32,14 @@ This repo can be cloned locally and run with the command `npm start` in your ter
 Your local copy requires an API key from the New York Times [which can be generated here](https://developer.nytimes.com/docs/top-stories-product/1/overview)
 
 Place your key in a `.env` file in the root of the directory with the key of `REACT_APP_API_KEY`
+
+### Cypress Testing
+
+<img width="449" alt="image" src="https://user-images.githubusercontent.com/90876852/171901293-ee169cac-87bf-405b-95dd-5daca38ec3d7.png">
+
+Cypress was used for E2E testing and all requests were stubbed for consistent testing!
+
+### Component Architecture
+![component_arch](https://user-images.githubusercontent.com/90876852/171902980-77786cce-2842-43ca-82c4-5e111cd42c50.jpeg)
+
+
