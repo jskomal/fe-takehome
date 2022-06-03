@@ -14,6 +14,7 @@ export type Article = {
   img: string
   imgCaption: string
   subsection?: string
+  url: string
 }
 
 type APIResponse = {
@@ -46,6 +47,7 @@ const App = () => {
         }
       })
       .then((data) => {
+        console.log(data)
         const results = data.results.map((story: APIResponse, index: number) => {
           return {
             id: index,
@@ -55,7 +57,8 @@ const App = () => {
             date: story.published_date,
             img: story.multimedia[1].url,
             imgCaption: story.multimedia[1].caption,
-            subsection: story.subsection
+            subsection: story.subsection,
+            url: story.url
           }
         })
         setArticles(results)
